@@ -12,18 +12,22 @@ cpp_files = [
     "RenderWindow.cpp",
     "Utils.cpp",
     "Vector2.cpp",
-    "Entity.cpp"
+    "Entity.cpp",
+    "Player.cpp"
 ]
 hpp_files = [
-    "Entity.hpp",
     "RenderWindow.hpp",
     "Utils.hpp",
-    "Vector2.hpp"
+    "Vector2.hpp",
+    "Player.hpp",
+    "Entity.hpp",
 ]
 asset_files = [
-    "player.png",
-    "player.jpg"
+
 ]
+print(len(hpp_files))
+print(len(cpp_files))
+print(len(asset_files))
 len_of_all_files = len(hpp_files) + len(asset_files) + len(cpp_files)
 found_files = 0
 URL = 'https://github.com/netiocom/Untitled_SDL2_Game/archive/refs/heads/master.zip'
