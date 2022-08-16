@@ -28,3 +28,8 @@ bool Player::move(Vector2 movement)
     this->pos += movement;
     return true;   
 }
+
+SDL_Texture* Player::getTex()
+{
+    return this->texture;
+}

@@ -1,5 +1,6 @@
 #include "RenderWindow.hpp"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 RenderWindow::RenderWindow(const char *title, int width, int height) {
     this->window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, 0);
@@ -25,6 +26,21 @@ void RenderWindow::render(SDL_Rect *rect, SDL_Texture *tex, Uint8 r, Uint8 g, Ui
 void RenderWindow::display() 
 {
     SDL_RenderPresent(this->renderer); 
+}
+
+SDL_Texture* RenderWindow::loadTexture(const char* file)
+{
+    auto surf = IMG_Load(file);
+    if (!surf) std::cout << "Error loading texture (" << file << "): " << SDL_GetError() << '\n';
+    SDL_Texture*  texture = SDL_CreateTextureFromSurface(this->renderer, surf);
+    if (!texture) std::cout << "Error loading texture (" << file << "): " << SDL_GetError() << '\n';
+    SDL_FreeSurface(surf);
+    return texture;
+}
+
+void RenderWindow::render(Player player)
+{
+    SDL_RenderCopy(this->renderer, player.getTex(), nullptr, &player.rect);    
 }
 
 RenderWindow::~RenderWindow() 

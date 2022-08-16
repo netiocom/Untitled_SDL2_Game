@@ -18,4 +18,5 @@ class Player : public Entity
         bool move(Vector2 movement);
         Vector2 getPos();
         void update();
+        SDL_Texture* getTex();
 };
