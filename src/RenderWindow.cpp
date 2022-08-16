@@ -10,12 +10,17 @@ void RenderWindow::clear()
 {
     SDL_RenderClear(this->renderer); 
 }
-
+                    // debug here
 void RenderWindow::render(SDL_Rect *rect, SDL_Texture *tex, Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
     
     SDL_SetRenderDrawColor(this->renderer, r, g, b, a);
     SDL_RenderFillRect(this->renderer, rect);
 }
+
+// void RenderWindow::render(SDL_Rect rect)
+// {
+
+// }
 
 void RenderWindow::display() 
 {

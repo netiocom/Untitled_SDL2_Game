@@ -1,10 +1,10 @@
-#pragma once
+#pragma once 
 #include <iostream>
 
 struct Vector2
 {
-    float x, y;
-    Vector2(float x, float y);
+    int x, y;
+    Vector2(int x, int y);
     Vector2();
     Vector2 operator+(Vector2 other);
     Vector2 operator-(Vector2 other);
@@ -16,3 +16,4 @@ struct Vector2
 };
 
 std::ostream& operator<<(std::ostream& output, Vector2 me);
+
