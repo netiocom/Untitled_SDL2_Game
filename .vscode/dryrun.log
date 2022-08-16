@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/Harshu/LAUNCH_CODES/games/SDL2/Untitled_SDL2_Game'
+g++ -Wall -std=c++20 -stdlib=libc++ -lSDL2 -lSDL2_image -g src/*.cpp -o ./make/build/game-v1.0.0-osx   -I ./include
+make: Leaving directory `/Users/Harshu/LAUNCH_CODES/games/SDL2/Untitled_SDL2_Game'
+ 

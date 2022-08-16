@@ -1,0 +1,4 @@
+# INSTALL FOR SOURCE CODE ONLY
+# pip3 install -r requirements.txt
+graphene # (or pip3 install graphene --user --force)
+about-time # (or pip3 install about-time --user --force)
