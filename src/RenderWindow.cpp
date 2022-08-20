@@ -1,6 +1,8 @@
 #include "RenderWindow.hpp"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <iostream>
+#include <glut/glut.h>
 
 RenderWindow::RenderWindow(const char *title, int width, int height) {
     this->window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, 0);
@@ -12,9 +14,9 @@ void RenderWindow::clear()
     SDL_RenderClear(this->renderer); 
 }
                     // debug here
-void RenderWindow::render(SDL_Rect *rect, SDL_Texture *tex, Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
-    
-    SDL_SetRenderDrawColor(this->renderer, r, g, b, a);
+void RenderWindow::render(SDL_Rect *rect, std::vector<Uint8> color) {
+    std::cout << color[0] << ", " << color[1] << ", " << color[2] << ", " << color[3] << '\n';
+    SDL_SetRenderDrawColor(this->renderer, color[0], color[1], color[2], color[3]);
     SDL_RenderFillRect(this->renderer, rect);
 }
 

@@ -13,6 +13,7 @@ struct Vector2
     void operator+=(Vector2 other);
     void operator-=(Vector2 other);
     friend std::ostream& operator<<(std::ostream& output, Vector2 me);
+
 };
 
 std::ostream& operator<<(std::ostream& output, Vector2 me);
