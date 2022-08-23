@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Tue Aug 16 17:14:41 2022
+
+# Make data base, printed on Tue Aug 23 13:43:15 2022
 
 # Variables
 
@@ -22,6 +25,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 @F = $(notdir $@)
 # makefile
+ 
 CURDIR := /Users/Harshu/LAUNCH_CODES/games/SDL2/Untitled_SDL2_Game
 # makefile
 SHELL = /bin/sh
@@ -40,13 +44,13 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /Library/Frameworks/Python.framework/Versions/3.10/bin:/Users/Harshu/opt/anaconda3/bin:/Users/Harshu/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/bin
+PATH = /Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Users/Harshu/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/bin
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.yNF6IcnoAU/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.GB4RCMQQUJ/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -60,11 +64,11 @@ HOME = /Users/Harshu
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/Harshu/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+VSCODE_CODE_CACHE_PATH = /Users/Harshu/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LOGNAME = Harshu
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -96,7 +100,7 @@ TMPDIR = /var/folders/z8/5nlz6rz541l3qy572d_2f43w0000gp/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/Harshu/Library/Application Support/Code/1.70.1-main.sock
+VSCODE_IPC_HOOK = /Users/Harshu/Library/Application Support/Code/1.70.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -106,7 +110,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.8643745104.8643745110
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.8645335003.8645335009
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -115,6 +119,7 @@ XPC_SERVICE_NAME = application.com.microsoft.VSCode.8643745104.8643745110
 __CF_USER_TEXT_ENCODING = 0x1F6:0x0:0x0
 # environment
 COMMAND_MODE = unix2003
+ 
 # default
 MAKEFILES := 
 # automatic
@@ -132,7 +137,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 29636
+VSCODE_PID = 5802
 # makefile (from `Makefile', line 1)
 FILES = src/*.cpp
 # variable set hash-table stats:
@@ -154,6 +159,15 @@ FILES = src/*.cpp
 
 # Files
 
+clang:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 21):
+	clang++ -Wall -std=c++20 -stdlib=libc++ $(SDL_FLAGS) -g ${FILES} -o ./make/build/game-v1.0.0-osx   $(INCLUDE)
+	
+
 # Not a target:
 all:
 #  Command-line target.
@@ -171,7 +185,7 @@ all:
 	g++ -Wall -std=c++20 -stdlib=libc++ $(SDL_FLAGS) -g ${FILES} -v -o ./make/bin/game-v1.0.0-win $(INCLUDE)
 	
 
-.PHONY: clean osxv winv
+.PHONY: clean osxv winv clang
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -193,7 +207,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-13 16:30:33
+#  Last modified 2022-08-23 13:42:42
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -226,6 +240,7 @@ clean:
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 12):
 	rm -rf ./make/bin/* ./make/build/*
+ 
 	
 
 osx:
@@ -243,7 +258,7 @@ osxv:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=2/27=7%
+# Load=13/1024=1%, Rehash=0, Collisions=2/29=7%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -255,8 +270,6 @@ osxv:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Aug 16 17:14:41 2022
+# Finished Make data base on Tue Aug 23 13:43:15 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-

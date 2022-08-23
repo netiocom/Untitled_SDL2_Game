@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
+#include <vector>
 
 void Init() {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) 
@@ -17,4 +18,15 @@ SDL_Point getSize(SDL_Texture* texture)
     SDL_Point size;
 	SDL_QueryTexture(texture, NULL, NULL, &size.x, &size.y);
 	return size;
+}
+
+
+SDL_bool vecAnyItemTrue(std::vector<SDL_bool> vec)
+{
+    for (auto item : vec)
+    {
+        if (item == SDL_TRUE || item == true) return SDL_TRUE;
+        else continue;
+    }
+    return SDL_FALSE;
 }

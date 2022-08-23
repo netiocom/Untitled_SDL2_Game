@@ -1,7 +1,8 @@
-#pragma once
+#pragma once 
 #include <SDL2/SDL.h>
 #include "Vector2.hpp"
 #include <vector>
+#include <iostream>
 
 
 class Entity
@@ -25,4 +26,5 @@ class Entity
         std::vector<Uint8> getRGBA();
         // int getAmountOfEntities();
         void update();
+        void getInfo(); 
 };

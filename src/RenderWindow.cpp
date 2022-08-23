@@ -2,7 +2,8 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
-#include <glut/glut.h>
+#include "Tile.hpp"
+#include "Tilemap.hpp"
 
 RenderWindow::RenderWindow(const char *title, int width, int height) {
     this->window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, 0);
@@ -15,9 +16,18 @@ void RenderWindow::clear()
 }
                     // debug here
 void RenderWindow::render(SDL_Rect *rect, std::vector<Uint8> color) {
-    std::cout << color[0] << ", " << color[1] << ", " << color[2] << ", " << color[3] << '\n';
+    //std::cout << color[0] << ", " << color[1] << ", " << color[2] << ", " << color[3] << '\n';
     SDL_SetRenderDrawColor(this->renderer, color[0], color[1], color[2], color[3]);
     SDL_RenderFillRect(this->renderer, rect);
+}
+
+void RenderWindow::render(std::vector<Tile> tilemap) {
+    for (Tile tile : tilemap)
+    {
+        
+        SDL_SetRenderDrawColor(this->renderer, 255, 0, 0, 255);
+        SDL_RenderFillRect(this->renderer, &tile.rect);
+    }
 }
 
 // void RenderWindow::render(SDL_Rect rect)

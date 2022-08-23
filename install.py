@@ -15,7 +15,8 @@ cpp_files = [
     "Entity.cpp",
     "Player.cpp",
     "Tile.cpp",
-    "Tilemap.cpp"
+    "Tilemap.cpp",
+    "Physics2D.cpp"
 ]
 hpp_files = [
     "RenderWindow.hpp",
@@ -24,7 +25,8 @@ hpp_files = [
     "Player.hpp",
     "Entity.hpp",
     "Tile.hpp",
-    "Tilemap.hpp"
+    "Tilemap.hpp",
+    "Physics2D.hpp"
 ]
 asset_files = [
     "microsoft.png"
@@ -50,7 +52,7 @@ with alive_bar(len_of_all_files, dual_line=True, title='Checking for ALL Files')
         bar()
         if os.path.exists(f'./include/{file}'):
             found_files += 1
-            print(f"{file} {colorama.Fore.CYAN}EXISTS: {colorama.Style.RESET_ALL}")
+            print(f"{file} {colorama.Fore.CYAN}EXISTS {colorama.Style.RESET_ALL}")
         else:
             print(f"{file} {colorama.Fore.RED}NOT found{colorama.Style.RESET_ALL}")
 
