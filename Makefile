@@ -6,7 +6,11 @@ osx:
 win:
 	g++ -Wall -std=c++20 -stdlib=libc++ $(SDL_FLAGS) -g ${FILES} -o ./make/bin/game-v1.0.0-win $(INCLUDE)
 
-.PHONY: clean osxv winv clang
+.PHONY: clean osxv winv clang WORK
+
+WORK:
+	g++ -Wall -std=c++20 -stdlib=libc++ -g ${FILES} ${SDL_FLAGS} -o ./make/build/game-v1.0.0-osx   $(INCLUDE) -I ./Frameworks/SDL2.framework
+
 
 clean:
 	rm -rf ./make/bin/* ./make/build/*

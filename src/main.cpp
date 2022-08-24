@@ -59,27 +59,21 @@ int main(int argc, char **argv)
 
     std::vector<Entity> collidingEntities = {
         ENTITIES[1]
-    
+
     };
 
     std::vector<SDL_bool> intersectingEntities = {
-        SDL_HasIntersection(&player.rect, &collidingEntities[0].rect)
-    };
-
+        SDL_HasIntersection(&player.rect, &collidingEntities[0].rect)};
 
     // game bools
     SDL_Event event;
     bool running = true;
     const Uint8 *keystates = SDL_GetKeyboardState(NULL);
 
-
-
-    
-
     while (running)
     {
         SDL_Delay(10);
-        while (SDL_PollEvent(&event)) 
+        while (SDL_PollEvent(&event))
         {
             switch (event.type)
             {
@@ -89,14 +83,14 @@ int main(int argc, char **argv)
             }
         }
 
-        if (player.rect.y <= 500) {
+        if (player.rect.y <= 500)
+        {
             player.move(Vector2(0, 2));
         }
 
         std::vector<SDL_bool> intersectingEntities = {
-            SDL_HasIntersection(&player.rect, &collidingEntities[0].rect)
-        };
-        
+            SDL_HasIntersection(&player.rect, &collidingEntities[0].rect)};
+
         SDL_bool collision = vecAnyItemTrue(intersectingEntities);
 
         if (keystates[SDL_SCANCODE_LEFT] && !collision)
@@ -108,10 +102,7 @@ int main(int argc, char **argv)
         if (keystates[SDL_SCANCODE_DOWN] && !collision)
             player.move(Vector2(0, 2));
 
-
         player.update();
-    
-        
 
         // render
         window.clear();
@@ -121,7 +112,7 @@ int main(int argc, char **argv)
         }
         window.render(tilemap.returnTiles());
         window.render(player);
-        
+
         window.display();
     }
 
