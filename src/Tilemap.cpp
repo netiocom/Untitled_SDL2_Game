@@ -7,6 +7,13 @@ Tilemap::Tilemap(){ }
 Tilemap::Tilemap(std::vector<std::string> inputMap)
 {
     this->inputMap = inputMap;
+    this->size = 32;
+}
+
+Tilemap::Tilemap(std::vector<std::string> inputMap, int size)
+{
+    this->inputMap = inputMap;
+    this->size = size;
 }
 
 void Tilemap::generateTiles() 
@@ -14,9 +21,9 @@ void Tilemap::generateTiles()
     int x = 0, y = 0;
     for (std::string line : this->inputMap)
     {
-        for (char _char : line)
+        for (char const& c : line)
         {
-            this->map.push_back(Tile(Vector2(x, y)));
+            this->map.push_back(Tile(this->size, Vector2(x, y)));
             x++;
         }
         y++;

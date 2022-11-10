@@ -1,5 +1,3 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/Harshu/Documents/repos/untitled_sdl2_game'
-g++ -Wall -std=c++20 -stdlib=libc++ -lSDL2 -lSDL2_image -g src/*.cpp -o ./make/build/game-v1.0.0-osx   -I ./include
-make: Leaving directory `/Users/Harshu/Documents/repos/untitled_sdl2_game'
- 
+make/make --dry-run --always-make --keep-going --print-directory
+/bin/sh: make/make: No such file or directory
+
